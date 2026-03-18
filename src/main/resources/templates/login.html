@@ -11,15 +11,19 @@
     AUNTENTICACIÓN
   </div>
   <div class="card-body">
-    <form>
+    <form th:object="${loginModel}}" th:action="@{/login}" method="post" >
         <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-            <label for="floatingInput">Email address</label>
+            <input type="text" class="form-control"
+                   id="txtusuario" placeholder="name@example.com" th:field="*{usuario}" >
+            <label for="txtusuario">Usuario</label>
         </div>
         <div class="form-floating">
-            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-            <label for="floatingPassword">Password</label>
+            <input type="password" class="form-control"
+                   id="txtpassword" placeholder="Password" th:field="*{password}">
+            <label for="txtpassword">Password</label>
         </div>
+        <hr><hr/>
+        <button type="submit" class="btn btn-primary">Ingresar</button>
     </form>
   </div>
 </div>
